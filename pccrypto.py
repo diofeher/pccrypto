@@ -55,7 +55,6 @@ class PCCrypto(object):
     def decrypt(self, enc_text):
         final_text = []
         for key, value in BIGGER.items():
-            print (key, value)
             enc_text = enc_text.replace(key, value)
 
         for word in enc_text.split():
@@ -74,7 +73,6 @@ if __name__ == "__main__":
     parser.add_argument('cmd', choices=['encrypt', 'decrypt'],
         help='encriptar ou decriptar')
     parser.add_argument('text', type=str, help='Texto')
-
 
     args = parser.parse_args()
     pcc = PCCrypto()
